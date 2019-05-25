@@ -7,4 +7,11 @@ class LoginManager  @Inject constructor(val localStore: LocalStore , val apiServ
     fun login(username : String , pass:String){
 
     }
+
+    @Inject
+    fun enableCache(cache: Cache){
+        cache.registerCache(this)
+    }
+
+
 }
