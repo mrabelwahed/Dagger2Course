@@ -4,7 +4,7 @@ import android.util.Log
 import javax.inject.Inject
 
 
-class LocalStore  @Inject constructor(){
+class LocalStore {
     fun saveUserToken(token: String) {
         Log.d("LocalStore","saveUserToken($token)")
     }

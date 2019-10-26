@@ -11,4 +11,10 @@ class LoginManager  @Inject constructor(private val localStore: LocalStore , pri
         localStore.saveUserToken(token)
     }
 
+    @Inject
+    fun enableCache(config: Config){
+        Log.d("caching","${config.iscacheEbanled}")
+        config.enablecache(this)
+    }
+
 }
