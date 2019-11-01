@@ -9,4 +9,5 @@ import dagger.Component
 @Component(modules = [AppModule::class])
 interface AppComponent {
     fun getAppLogger():AppLogger
+    fun getLoginComponent():LoginComponent
 }
