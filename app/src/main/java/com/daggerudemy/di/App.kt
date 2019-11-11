@@ -1,17 +1,18 @@
 package com.daggerudemy.di
 
 import android.app.Application
-import android.util.Log
-import com.daggerudemy.di.component.DaggerAppComponent
-import com.daggerudemy.di.module.AppModule
+import com.daggerudemy.di.multibindings.component.DaggerMultibindingAppComponent
+import com.daggerudemy.di.multibindings.component.MultibindingAppComponent
 
 class App: Application() {
+
+    lateinit var multibindingAppComponent: MultibindingAppComponent
+
     override fun onCreate() {
         super.onCreate()
 
-        val appComponnet = DaggerAppComponent.builder().appModule(AppModule()).build()
-        Log.d("App",appComponnet.getAppLogger().value)
-        Log.d("App",appComponnet.getAppLogger().value)
-        Log.d("App",appComponnet.getAppLogger().value)
+        multibindingAppComponent = DaggerMultibindingAppComponent.builder()
+            .application(this)
+            .build()
     }
 }
